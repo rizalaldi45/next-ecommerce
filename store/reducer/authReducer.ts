@@ -1,5 +1,5 @@
 import { AUTH_ACTION } from "@/store/action/index";
-import { IReducer } from "@/interface/store/Ireducer";
+import { IReducer } from "@/interface/store/IReducer";
 
 type initState = {
   user: Object;
