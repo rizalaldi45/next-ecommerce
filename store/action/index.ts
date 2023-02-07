@@ -1,0 +1,9 @@
+export const AUTH_ACTION: {
+    USER_LOGIN: string,
+    USER_LOGIN_SUCCESS: string,
+    USER_LOGIN_FAIL: string
+} = {
+    USER_LOGIN: 'USER_LOGIN',
+    USER_LOGIN_SUCCESS: 'USER_LOGIN_SUCCESS',
+    USER_LOGIN_FAIL: 'USER_LOGIN_FAIL'
+}

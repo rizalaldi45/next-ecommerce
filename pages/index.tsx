@@ -1,11 +1,72 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
+import localFont from "@next/font/local";
+import Head from "next/head";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import Carousel from "react-multi-carousel";
 
-const inter = Inter({ subsets: ['latin'] })
+import CardProduct from "@/components/CardProduct";
+import Button from "@/components/Button";
 
-export default function Home() {
+import "react-multi-carousel/lib/styles.css";
+import { useEffect, useState } from "react";
+
+const myFontBold = localFont({ src: "../public/fonts/CircularStd-bold.otf" });
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 3,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 3,
+  },
+  miniLaptop: {
+    breakpoint: { max: 1304, min: 1100 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1100, min: 734 },
+    items: 1,
+  },
+  mobile: {
+    breakpoint: { max: 734, min: 0 },
+    items: 1,
+  },
+};
+
+export default function Home(): JSX.Element {
+  const { t } = useTranslation();
+  const store = useSelector((state) => state);
+  const [currentWidth, setCurrentWidth] = useState<number>(0);
+  const [centerMode, setCendterMode] = useState<boolean>(true);
+
+  const productDiscount: string[] = [
+    "Nike Jordan Air",
+    "masker medis 4 ply pokana 4D kf94 isi 12 lbr - Beige sand",
+    "Nike Jordan Air",
+    "kaos import lengan pendek pria | baju pria import polos kaos ",
+    "LIGER Handsfree headset earphone L-10 METAL stereo & bass ",
+    "Nike Jordan Air",
+    "kaos import lengan pendek pria | baju pria import polos kaos ",
+    "LIGER Handsfree headset earphone L-10 METAL stereo & bass ",
+  ];
+
+  useEffect(() => {
+    addEventListener("resize", (event: UIEvent) => {
+      const w = event.target as Window;
+      setCurrentWidth(w.innerWidth);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (currentWidth <= 540 && currentWidth !== 0) {
+      setCendterMode(false);
+    } else {
+      setCendterMode(true);
+    }
+  }, [currentWidth]);
+
   return (
     <>
       <Head>
@@ -14,110 +75,167 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+      <main>
+        <div className="w-[90vw] max-w-screen-2xl mx-auto mb-10 p-2 mt-3 text-center h-96 flex flex-col items-center justify-center bg-gray-100 rounded-2xl">
+          <div className={myFontBold.className}>
+            <h1 className="font-bold text-2xl">
+              Find anything goods with reasonable price here
+            </h1>
           </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
+          <h3 className="text-md leading-8 text-gray-400">
+            we have quality product from the best supplier
+          </h3>
+          <Button
+            btnText="Explore More"
+            margin="mt-5"
+            rounded="rounded-3xl"
+            fontSize="text-sm"
           />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
+        </div>
+        <div className="w-[90vw] max-w-screen-2xl mx-auto my-4">
+          <h1 className="font-semibold my-6 text-lg">Best Selling Product</h1>
+          <div className="flex grid grid-flow-row-dense grid-rows-1 gap-4">
+            <Carousel
+              autoPlay={true}
+              infinite={true}
+              arrows={false}
+              centerMode={centerMode}
+              responsive={responsive}
+            >
+              <CardProduct orientation="horizontal" />
+              <CardProduct orientation="horizontal" />
+              <CardProduct orientation="horizontal" />
+              <CardProduct orientation="horizontal" />
+              <CardProduct orientation="horizontal" />
+              <CardProduct orientation="horizontal" />
+            </Carousel>
           </div>
         </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
+        <div className="w-full h-auto py-14 my-10 bg-gray-200 flex flex-col items-center justify-center">
+          <div className="w-[90vw] max-w-screen-2xl flex flex-col items-center justify-center">
+            <div className={myFontBold.className}>
+              <h1 className="font-bold text-3xl text-center">
+                Get attractive discounts on every purchase
+              </h1>
+            </div>
+            <h3 className="text-sm text-center mt-4 leading-6 text-gray-500">
+              shopping is bit of a relaxing hobby for me, <br /> which is
+              troubling for the bank balance
+            </h3>
+            <Button
+              btnText="Learn More"
+              margin="mt-5"
+              rounded="rounded-3xl"
+              fontSize="text-sm"
+            />
+            <div className="mx-auto flex flex-col mt-10">
+              <span className="text-[10px]">Discounted product</span>
+              <div className="flex mt-5 flex-wrap">
+                {productDiscount.map((e, i) => (
+                  <Button
+                    key={i}
+                    btnText={e}
+                    margin="mr-5 mb-3"
+                    rounded="rounded-3xl"
+                    fontSize="text-[9px]"
+                    padding="py-[6px] px-4"
+                    color="bg-white"
+                    textColor="text-black"
+                    maxWidth="w-24"
+                    shadow="drop-shadow-md"
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-[90vw] max-w-screen-2xl mx-auto my-4">
+          <div className="my-6">
+            <h1 className="font-semibold text-lg">Weekly popular product</h1>
+            <span className="text-sm text-gray-400">
+              Popular product on this week
+            </span>
+          </div>
+          <div className="grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-7">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => (
+              <CardProduct key={e} orientation="vertical" />
+            ))}
+          </div>
+        </div>
+        <div className="w-[90vw] max-w-screen-2xl mx-auto my-6">
+          <div className="my-6">
+            <h1 className="font-semibold text-lg">Services to help you shop</h1>
+            <span className="text-sm text-gray-400">
+              Our services to customer
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <div className="h-96 bg-gray-100 rounded-2xl shadow">
+              <div className="px-14 py-10 h-[40%]">
+                <div className={myFontBold.className}>
+                  <h1 className="font-extrabold text-2xl">Fast Delivery</h1>
+                </div>
+                <span className="text-sm">
+                  we will make sure to deliver your order always safe and on
+                  time
+                </span>
+              </div>
+              <div
+                className="w-full h-[60%]"
+                style={{
+                  backgroundImage: "url('/images/delivery.jpg')",
+                  backgroundSize: "cover",
+                  borderBottomLeftRadius: "1rem",
+                  borderBottomRightRadius: "1rem",
+                }}
+              />
+            </div>
+            <div className="h-96 bg-gray-100 rounded-2xl shadow">
+              <div className="px-14 py-10 h-[40%]">
+                <div className={myFontBold.className}>
+                  <h1 className="font-extrabold text-2xl">
+                    Online Payment Process
+                  </h1>
+                </div>
+                <span className="text-sm">
+                  with online payment you can pay your order everywhere
+                </span>
+              </div>
+              <div
+                className="w-full h-[60%]"
+                style={{
+                  backgroundImage: "url('/images/online-payment.jpg')",
+                  backgroundSize: "cover",
+                  borderBottomLeftRadius: "1rem",
+                  borderBottomRightRadius: "1rem",
+                }}
+              />
+            </div>
+            <div className="h-96 bg-gray-100 rounded-2xl shadow">
+              <div className="px-14 py-10 h-[40%]">
+                <div className={myFontBold.className}>
+                  <h1 className="font-extrabold text-2xl">
+                    Fast Response Support
+                  </h1>
+                </div>
+                <span className="text-sm">
+                  we will make sure to deliver your order always safe and on
+                  time
+                </span>
+              </div>
+              <div
+                className="w-full h-[60%]"
+                style={{
+                  backgroundImage: "url('/images/24-service.jpg')",
+                  backgroundSize: "cover",
+                  borderBottomLeftRadius: "1rem",
+                  borderBottomRightRadius: "1rem",
+                }}
+              />
+            </div>
+          </div>
         </div>
       </main>
     </>
-  )
+  );
 }
