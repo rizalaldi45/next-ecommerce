@@ -31,7 +31,7 @@ const Header = (): JSX.Element => {
 
   return (
     <div className="w-[90vw] max-w-screen-2xl mx-auto py-5 bg-white flex items-center justify-between">
-      <div className="font-bold">Zorro</div>
+      <div className="bolded font-bold text-xl">Zorro</div>
       <div className="flex items-center gap-x-5">
         <div className="hidden md:block">
           <Input

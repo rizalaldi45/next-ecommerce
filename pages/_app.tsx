@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <I18nextProvider i18n={i18n}>
         <Header />
         <Component {...pageProps} />
-        {/* <Footer /> */}
+        <Footer />
       </I18nextProvider>
     </Provider>
   );

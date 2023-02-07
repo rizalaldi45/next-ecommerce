@@ -77,7 +77,7 @@ export default function Home(): JSX.Element {
           <h1 className="font-bold text-2xl">
             Find anything goods with reasonable price here
           </h1>
-          <h3 className="text-md leading-8 text-gray-400">
+          <h3 className="text-md leading-10 text-gray-400">
             we have quality product from the best supplier
           </h3>
           <Button
@@ -88,7 +88,12 @@ export default function Home(): JSX.Element {
           />
         </div>
         <div className="w-[90vw] max-w-screen-2xl mx-auto my-4">
-          <h1 className="font-semibold my-6 text-lg">Best Selling Product</h1>
+          <div className="my-6">
+            <h1 className="font-semibold text-lg">Best Selling Product</h1>
+            <span className="text-sm text-gray-400">
+              Most ordered product on this week
+            </span>
+          </div>
           <div className="flex grid grid-flow-row-dense grid-rows-1 gap-4">
             <Carousel
               autoPlay={true}
@@ -106,7 +111,7 @@ export default function Home(): JSX.Element {
             </Carousel>
           </div>
         </div>
-        <div className="w-full h-auto py-14 my-10 bg-gray-200 flex flex-col items-center justify-center">
+        <div className="w-full h-auto py-14 my-10 bg-gray-100 flex flex-col items-center justify-center">
           <div className="w-[90vw] max-w-screen-2xl flex flex-col items-center justify-center">
             <h1 className="bolded font-bold text-3xl text-center">
               Get attractive discounts on every purchase
