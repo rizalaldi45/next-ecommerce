@@ -1,10 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+  
+@font-face {
+  font-family: "Circular Bold";
+  src: url('../public/fonts/CircularStd-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Circular Light";
+  src: url('../public/fonts/CircularStd-Light.otf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Circular Light";
   scroll-behavior: smooth;
+}
+
+.bolded {
+  font-family: "Circular Bold";
 }
 
 /* width */

@@ -1,4 +1,3 @@
-import localFont from "@next/font/local";
 import Head from "next/head";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -9,8 +8,6 @@ import Button from "@/components/Button";
 
 import "react-multi-carousel/lib/styles.css";
 import { useEffect, useState } from "react";
-
-const myFontBold = localFont({ src: "../public/fonts/CircularStd-bold.otf" });
 
 const responsive = {
   superLargeDesktop: {
@@ -77,11 +74,9 @@ export default function Home(): JSX.Element {
       </Head>
       <main>
         <div className="w-[90vw] max-w-screen-2xl mx-auto mb-10 p-2 mt-3 text-center h-96 flex flex-col items-center justify-center bg-gray-100 rounded-2xl">
-          <div className={myFontBold.className}>
-            <h1 className="font-bold text-2xl">
-              Find anything goods with reasonable price here
-            </h1>
-          </div>
+          <h1 className="font-bold text-2xl">
+            Find anything goods with reasonable price here
+          </h1>
           <h3 className="text-md leading-8 text-gray-400">
             we have quality product from the best supplier
           </h3>
@@ -113,11 +108,9 @@ export default function Home(): JSX.Element {
         </div>
         <div className="w-full h-auto py-14 my-10 bg-gray-200 flex flex-col items-center justify-center">
           <div className="w-[90vw] max-w-screen-2xl flex flex-col items-center justify-center">
-            <div className={myFontBold.className}>
-              <h1 className="font-bold text-3xl text-center">
-                Get attractive discounts on every purchase
-              </h1>
-            </div>
+            <h1 className="bolded font-bold text-3xl text-center">
+              Get attractive discounts on every purchase
+            </h1>
             <h3 className="text-sm text-center mt-4 leading-6 text-gray-500">
               shopping is bit of a relaxing hobby for me, <br /> which is
               troubling for the bank balance
@@ -172,9 +165,9 @@ export default function Home(): JSX.Element {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <div className="h-96 bg-gray-100 rounded-2xl shadow">
               <div className="px-14 py-10 h-[40%]">
-                <div className={myFontBold.className}>
-                  <h1 className="font-extrabold text-2xl">Fast Delivery</h1>
-                </div>
+                <h1 className="bolded font-extrabold text-2xl">
+                  Fast Delivery
+                </h1>
                 <span className="text-sm">
                   we will make sure to deliver your order always safe and on
                   time
@@ -192,11 +185,9 @@ export default function Home(): JSX.Element {
             </div>
             <div className="h-96 bg-gray-100 rounded-2xl shadow">
               <div className="px-14 py-10 h-[40%]">
-                <div className={myFontBold.className}>
-                  <h1 className="font-extrabold text-2xl">
-                    Online Payment Process
-                  </h1>
-                </div>
+                <h1 className="bolded font-extrabold text-2xl">
+                  Online Payment Process
+                </h1>
                 <span className="text-sm">
                   with online payment you can pay your order everywhere
                 </span>
@@ -213,11 +204,9 @@ export default function Home(): JSX.Element {
             </div>
             <div className="h-96 bg-gray-100 rounded-2xl shadow">
               <div className="px-14 py-10 h-[40%]">
-                <div className={myFontBold.className}>
-                  <h1 className="font-extrabold text-2xl">
-                    Fast Response Support
-                  </h1>
-                </div>
+                <h1 className="bolded font-extrabold text-2xl">
+                  Fast Response Support
+                </h1>
                 <span className="text-sm">
                   we will make sure to deliver your order always safe and on
                   time
