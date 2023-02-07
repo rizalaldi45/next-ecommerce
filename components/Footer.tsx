@@ -2,7 +2,7 @@ import Input from "@/components/Input";
 
 const Footer = (): JSX.Element => {
   return (
-    <div className="w-full h-96 py-10 flex items-end justify-center">
+    <div className="w-full max-w-screen-2xl mx-auto h-96 py-10 flex items-end justify-center">
       <div className="w-[90vw] flex flex-col">
         <div className="flex flex-col justify-center items-center">
           <div className="bolded text-xl text-center">Zorro</div>
@@ -13,7 +13,7 @@ const Footer = (): JSX.Element => {
             <li className="cursor-pointer">Help</li>
           </ul>
         </div>
-        <div className="mt-20 flex justify-between items-center">
+        <div className="mt-20 flex flex-col md:flex-row justify-between items-center">
           <Input
             type="text"
             rounded="rounded-3xl"
@@ -22,7 +22,7 @@ const Footer = (): JSX.Element => {
             padding="py-3 px-5"
             endIconString="Subscribe"
           />
-          <div>© 2023 Zorro UI. All rights reserved</div>
+          <div className="mt-7 md:mt-0">© 2023 Zorro UI. All rights reserved</div>
         </div>
       </div>
     </div>
