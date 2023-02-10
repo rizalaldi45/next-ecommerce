@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
 
 import Button from "./Button";
 
@@ -7,6 +8,8 @@ type cardProductType = {
 };
 
 const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <>
       {orientation === "horizontal" ? (
@@ -35,7 +38,7 @@ const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
                 700 <span className="text-[10px]">$</span>
               </h5>
               <Button
-                btnText="add to cart"
+                btnText={t('add_cart')}
                 fontSize="text-[10px]"
                 padding="px-[14px] py-[5px]"
                 rounded="rounded-2xl"
@@ -87,7 +90,7 @@ const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
                 <div className="text-xs">(129)</div>
               </div>
               <Button
-                btnText="add to cart"
+                btnText={t('add_cart')}
                 fontSize="text-[10px]"
                 padding="px-[14px] py-[5px]"
                 rounded="rounded-2xl"

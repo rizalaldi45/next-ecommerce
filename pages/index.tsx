@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
@@ -7,7 +8,6 @@ import CardProduct from "@/components/CardProduct";
 import Button from "@/components/Button";
 
 import "react-multi-carousel/lib/styles.css";
-import { useEffect, useState } from "react";
 
 const responsive = {
   superLargeDesktop: {
@@ -49,6 +49,28 @@ export default function Home(): JSX.Element {
     "LIGER Handsfree headset earphone L-10 METAL stereo & bass ",
   ];
 
+  const serviceContent: Array<{
+    title: string;
+    subTitle: string;
+    img: string;
+  }> = [
+    {
+      title: t("fast_delivery"),
+      subTitle: t("we_will_make_sure"),
+      img: "url('/images/delivery.jpg')",
+    },
+    {
+      title: t("online_payment_process"),
+      subTitle: t("with_online_payment"),
+      img: "url('/images/online-payment.jpg')",
+    },
+    {
+      title: t("fast_res_support"),
+      subTitle: t("problem_with_fast"),
+      img: "url('/images/24-service.jpg')",
+    },
+  ];
+
   useEffect(() => {
     addEventListener("resize", (event: UIEvent) => {
       const w = event.target as Window;
@@ -74,14 +96,12 @@ export default function Home(): JSX.Element {
       </Head>
       <main>
         <div className="w-[90vw] max-w-screen-2xl mx-auto mb-10 p-2 mt-3 text-center h-96 flex flex-col items-center justify-center bg-gray-100 rounded-2xl">
-          <h1 className="font-bold text-2xl">
-            Find anything goods with reasonable price here
-          </h1>
+          <h1 className="font-bold text-2xl">{t("find_anything_goods")}</h1>
           <h3 className="text-md leading-10 text-gray-400">
-            we have quality product from the best supplier
+            {t("we_have_quality")}
           </h3>
           <Button
-            btnText="Explore More"
+            btnText={t("explore_more")}
             margin="mt-5"
             rounded="rounded-3xl"
             fontSize="text-sm"
@@ -89,9 +109,9 @@ export default function Home(): JSX.Element {
         </div>
         <div className="w-[90vw] max-w-screen-2xl mx-auto my-4">
           <div className="my-6">
-            <h1 className="font-semibold text-lg">Best Selling Product</h1>
+            <h1 className="font-semibold text-lg">{t("best_selling")}</h1>
             <span className="text-sm text-gray-400">
-              Most ordered product on this week
+              {t("most_order_week")}
             </span>
           </div>
           <div className="flex grid grid-flow-row-dense grid-rows-1 gap-4">
@@ -114,20 +134,22 @@ export default function Home(): JSX.Element {
         <div className="w-full h-auto py-14 my-10 bg-gray-100 flex flex-col items-center justify-center">
           <div className="w-[90vw] max-w-screen-2xl flex flex-col items-center justify-center">
             <h1 className="bolded font-bold text-3xl text-center">
-              Get attractive discounts on every purchase
+              {t("get_attractive")}
             </h1>
-            <h3 className="text-sm text-center mt-4 leading-6 text-gray-500">
-              shopping is bit of a relaxing hobby for me, <br /> which is
-              troubling for the bank balance
+            <h3 className="text-sm text-center mt-4 text-gray-500">
+              {t("shoping_is_bit")}
+            </h3>
+            <h3 className="text-sm text-center mt-[4px] text-gray-500">
+              {t("trouble_balance")}
             </h3>
             <Button
-              btnText="Learn More"
+              btnText={t("learn_more")}
               margin="mt-5"
               rounded="rounded-3xl"
               fontSize="text-sm"
             />
             <div className="mx-auto flex flex-col mt-10">
-              <span className="text-[10px]">Discounted product</span>
+              <span className="text-[10px]">{t("discounted_product")}</span>
               <div className="flex mt-5 flex-wrap">
                 {productDiscount.map((e, i) => (
                   <Button
@@ -149,9 +171,11 @@ export default function Home(): JSX.Element {
         </div>
         <div className="w-[90vw] max-w-screen-2xl mx-auto my-4">
           <div className="my-6">
-            <h1 className="font-semibold text-lg">Weekly popular product</h1>
+            <h1 className="font-semibold text-lg">
+              {t("weekly_popular_product")}
+            </h1>
             <span className="text-sm text-gray-400">
-              Popular product on this week
+              {t("popular_this_week")}
             </span>
           </div>
           <div className="grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-7">
@@ -162,71 +186,32 @@ export default function Home(): JSX.Element {
         </div>
         <div className="w-[90vw] max-w-screen-2xl mx-auto my-6">
           <div className="my-6">
-            <h1 className="font-semibold text-lg">Services to help you shop</h1>
+            <h1 className="font-semibold text-lg">{t("services_to_help")}</h1>
             <span className="text-sm text-gray-400">
-              Our services to customer
+              {t("our_customer_services")}
             </span>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div className="h-96 bg-gray-100 rounded-2xl shadow">
-              <div className="px-14 py-10 h-[40%]">
-                <h1 className="bolded font-extrabold text-2xl">
-                  Fast Delivery
-                </h1>
-                <span className="text-sm">
-                  we will make sure to deliver your order always safe and on
-                  time
-                </span>
-              </div>
+            {serviceContent.map((e, i) => (
               <div
-                className="w-full h-[60%]"
-                style={{
-                  backgroundImage: "url('/images/delivery.jpg')",
-                  backgroundSize: "cover",
-                  borderBottomLeftRadius: "1rem",
-                  borderBottomRightRadius: "1rem",
-                }}
-              />
-            </div>
-            <div className="h-96 bg-gray-100 rounded-2xl shadow">
-              <div className="px-14 py-10 h-[40%]">
-                <h1 className="bolded font-extrabold text-2xl">
-                  Online Payment Process
-                </h1>
-                <span className="text-sm">
-                  with online payment you can pay your order everywhere
-                </span>
+                key={`service-card-${i}`}
+                className="h-96 bg-gray-100 rounded-2xl shadow"
+              >
+                <div className="px-14 py-10 h-[40%]">
+                  <h1 className="bolded font-extrabold text-2xl">{e.title}</h1>
+                  <span className="text-sm">{e.subTitle}</span>
+                </div>
+                <div
+                  className="w-full h-[60%]"
+                  style={{
+                    backgroundImage: `${e.img}`,
+                    backgroundSize: "cover",
+                    borderBottomLeftRadius: "1rem",
+                    borderBottomRightRadius: "1rem",
+                  }}
+                />
               </div>
-              <div
-                className="w-full h-[60%]"
-                style={{
-                  backgroundImage: "url('/images/online-payment.jpg')",
-                  backgroundSize: "cover",
-                  borderBottomLeftRadius: "1rem",
-                  borderBottomRightRadius: "1rem",
-                }}
-              />
-            </div>
-            <div className="h-96 bg-gray-100 rounded-2xl shadow">
-              <div className="px-14 py-10 h-[40%]">
-                <h1 className="bolded font-extrabold text-2xl">
-                  Fast Response Support
-                </h1>
-                <span className="text-sm">
-                  we will make sure to deliver your order always safe and on
-                  time
-                </span>
-              </div>
-              <div
-                className="w-full h-[60%]"
-                style={{
-                  backgroundImage: "url('/images/24-service.jpg')",
-                  backgroundSize: "cover",
-                  borderBottomLeftRadius: "1rem",
-                  borderBottomRightRadius: "1rem",
-                }}
-              />
-            </div>
+            ))}
           </div>
         </div>
       </main>
