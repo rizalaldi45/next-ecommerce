@@ -38,6 +38,8 @@ export default function Home(): JSX.Element {
   const [currentWidth, setCurrentWidth] = useState<number>(0);
   const [centerMode, setCendterMode] = useState<boolean>(true);
 
+  console.log('store', store)
+
   const productDiscount: string[] = [
     "Nike Jordan Air",
     "masker medis 4 ply pokana 4D kf94 isi 12 lbr - Beige sand",
