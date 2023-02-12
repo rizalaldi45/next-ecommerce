@@ -28,13 +28,13 @@ const Header = ({ changeLanguage }: any): JSX.Element => {
   const dataPopoverSearchPeople: Array<dataType> = [
     {
       title: "Nike Jordan",
-      subTitle: "disc 15%",
-      img: "",
+      subTitle: "Rp. 700.000",
+      img: "/images/product-2.jpg",
     },
     {
       title: "Adidas Classic",
-      subTitle: "disc 20%",
-      img: "",
+      subTitle: "Rp. 550.000",
+      img: "/images/product-2.jpg",
     },
   ];
 
@@ -89,13 +89,15 @@ const Header = ({ changeLanguage }: any): JSX.Element => {
             className="flex items-center gap-x-2 cursor-pointer"
             onClick={() => setClickLanguage(!clickLanguage)}
           >
-            <img
-              className="h-5"
-              src={`/images/${activeLanguage}-flag.png`}
-              alt="active-lang"
-              width={18}
-              height={9}
-            />
+            {activeLanguage !== "" && (
+              <img
+                className="h-5"
+                src={`/images/${activeLanguage}-flag.png`}
+                alt="active-lang"
+                width={18}
+                height={9}
+              />
+            )}
             <span className="font-bold text-md">{activeLanguage}</span>
           </div>
           <div>

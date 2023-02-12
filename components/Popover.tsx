@@ -12,7 +12,7 @@ type popoverType = {
   height: string;
   data: Array<dataType>;
   visible: boolean;
-  onLeave: Dispatch<SetStateAction<boolean>>
+  onLeave: Dispatch<SetStateAction<boolean>>;
 };
 
 const Popover = ({
@@ -37,11 +37,18 @@ const Popover = ({
               >
                 <div className="flex items-center gap-x-4">
                   {e.img && (
-                    <div className="w-9 h-9 bg-gray-300 rounded-full cursor-pointer" />
+                    <div
+                      className="w-9 h-9 rounded-full cursor-pointer"
+                      style={{
+                        backgroundImage: `url(${e.img})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    />
                   )}
                   <div onClick={() => e.action()}>
                     <span className="text-sm">{e.title}</span>
-                    <div className="text-xs text-gray-300">{e.subTitle}</div>
+                    <div className="text-xs text-gray-400">{e.subTitle}</div>
                   </div>
                 </div>
               </div>
