@@ -26,3 +26,14 @@ export const homeTranslateId: Object = {
     enter_your_email: 'Masukan alamat email',
     subscribe: 'Langganan',
 }
+
+export const detailTranslateId: Object = {
+    weight: 'Berat',
+    choose_size: 'Pilih ukuranmu',
+    we_have: 'Kami punya',
+    stock: 'stok',
+    delivery_opt: 'Pilihan pengiriman',
+    customer_review: 'Penilaian pelanggan',
+    buy_now: 'beli sekarang',
+    add_cart: 'tambah ke keranjang'
+}

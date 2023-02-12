@@ -5,9 +5,13 @@ import Button from "./Button";
 
 type cardProductType = {
   orientation: string;
+  detailRedirect: Function;
 };
 
-const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
+const CardProduct = ({
+  orientation,
+  detailRedirect,
+}: cardProductType): JSX.Element => {
   const { t } = useTranslation();
 
   return (
@@ -33,12 +37,12 @@ const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
               </div>
             </div>
             <div className="pl-6 flex flex-col justify-center items-start">
-              <h3 className="font-bold">Nike Jordan Air Limited</h3>
-              <h5 className="my-1 text-xs text-gray-500">
-                700 <span className="text-[10px]">$</span>
-              </h5>
+              <h3 className="font-bold cursor-pointer" onClick={() => detailRedirect()}>
+                Nike Jordan Air Limited
+              </h3>
+              <h5 className="bolded my-1 text-xs text-gray-500">$ 700</h5>
               <Button
-                btnText={t('add_cart')}
+                btnText={t("add_cart")}
                 fontSize="text-[10px]"
                 padding="px-[14px] py-[5px]"
                 rounded="rounded-2xl"
@@ -68,12 +72,13 @@ const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
               </div>
             </div>
             <div className="py-6 px-4 flex flex-col justify-center items-start">
-              <h3 className="font-bold cursor-pointer">
+              <h3
+                className="font-bold cursor-pointer"
+                onClick={() => detailRedirect()}
+              >
                 Nike Jordan Air Limited
               </h3>
-              <h5 className="my-1 text-xs text-gray-500">
-                700 <span className="text-[10px]">$</span>
-              </h5>
+              <h5 className="bolded my-1 text-xs text-gray-500">$ 700</h5>
               <div className="w-full flex justify-between">
                 <div className="flex gap-x-1">
                   {[1, 2, 3, 4, 5].map((e) => (
@@ -90,7 +95,7 @@ const CardProduct = ({ orientation }: cardProductType): JSX.Element => {
                 <div className="text-xs">(129)</div>
               </div>
               <Button
-                btnText={t('add_cart')}
+                btnText={t("add_cart")}
                 fontSize="text-[10px]"
                 padding="px-[14px] py-[5px]"
                 rounded="rounded-2xl"

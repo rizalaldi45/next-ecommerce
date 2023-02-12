@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/router";
 import Carousel from "react-multi-carousel";
 
 import CardProduct from "@/components/CardProduct";
@@ -34,11 +35,10 @@ const responsive = {
 
 export default function Home(): JSX.Element {
   const { t } = useTranslation();
+  const router = useRouter();
   const store = useSelector((state) => state);
   const [currentWidth, setCurrentWidth] = useState<number>(0);
   const [centerMode, setCendterMode] = useState<boolean>(true);
-
-  console.log('store', store)
 
   const productDiscount: string[] = [
     "Nike Jordan Air",
@@ -72,6 +72,10 @@ export default function Home(): JSX.Element {
       img: "url('/images/24-service.jpg')",
     },
   ];
+
+  const redirectDetailProduct = (): void => {
+    router.push("/detail?product_id=1");
+  };
 
   useEffect(() => {
     addEventListener("resize", (event: UIEvent) => {
@@ -123,12 +127,30 @@ export default function Home(): JSX.Element {
               centerMode={centerMode}
               responsive={responsive}
             >
-              <CardProduct orientation="horizontal" />
-              <CardProduct orientation="horizontal" />
-              <CardProduct orientation="horizontal" />
-              <CardProduct orientation="horizontal" />
-              <CardProduct orientation="horizontal" />
-              <CardProduct orientation="horizontal" />
+              <CardProduct
+                orientation="horizontal"
+                detailRedirect={redirectDetailProduct}
+              />
+              <CardProduct
+                orientation="horizontal"
+                detailRedirect={redirectDetailProduct}
+              />
+              <CardProduct
+                orientation="horizontal"
+                detailRedirect={redirectDetailProduct}
+              />
+              <CardProduct
+                orientation="horizontal"
+                detailRedirect={redirectDetailProduct}
+              />
+              <CardProduct
+                orientation="horizontal"
+                detailRedirect={redirectDetailProduct}
+              />
+              <CardProduct
+                orientation="horizontal"
+                detailRedirect={redirectDetailProduct}
+              />
             </Carousel>
           </div>
         </div>
@@ -181,7 +203,11 @@ export default function Home(): JSX.Element {
           </div>
           <div className="grid grid-flow-row-dense grid-cols-2 md:grid-cols-3 lg:grid-cols-5 grid-rows-2 gap-7">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => (
-              <CardProduct key={e} orientation="vertical" />
+              <CardProduct
+                key={e}
+                orientation="vertical"
+                detailRedirect={redirectDetailProduct}
+              />
             ))}
           </div>
         </div>

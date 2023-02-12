@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import { homeTranslateEn } from "@/public/locale/en/locale";
-import { homeTranslateId } from "@/public/locale/id/locale";
+import { homeTranslateEn, detailTranslateEn } from "@/public/locale/en/locale";
+import { homeTranslateId, detailTranslateId } from "@/public/locale/id/locale";
 
 i18n
   .use(initReactI18next)
@@ -11,11 +11,13 @@ i18n
       en: {
         translation: {
           ...homeTranslateEn,
+          ...detailTranslateEn,
         },
       },
       id: {
         translation: {
           ...homeTranslateId,
+          ...detailTranslateId,
         },
       },
     },

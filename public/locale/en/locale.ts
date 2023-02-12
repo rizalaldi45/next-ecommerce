@@ -1,4 +1,4 @@
-export const homeTranslateEn: Object ={
+export const homeTranslateEn: Object = {
     home: "Home",
     find_anything_goods: "Find anything goods with reasonable price here",
     we_have_quality: "we have quality product from the best supplier",
@@ -25,4 +25,15 @@ export const homeTranslateEn: Object ={
     search: 'Search',
     enter_your_email: 'Enter your email',
     subscribe: 'Subscribe',
+}
+
+export const detailTranslateEn: Object = {
+    weight: 'Weight',
+    choose_size: 'Choose your size',
+    we_have: 'We have',
+    stock: 'stock',
+    delivery_opt: 'Delivery options',
+    customer_review: 'Customer review',
+    buy_now: 'buy now',
+    add_cart: 'add to cart',
 }
