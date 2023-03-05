@@ -25,6 +25,7 @@ export const homeTranslateId: Object = {
     search: 'Cari',
     enter_your_email: 'Masukan alamat email',
     subscribe: 'Langganan',
+    show_all: 'Tampilkan Semua',
 }
 
 export const detailTranslateId: Object = {
@@ -35,5 +36,7 @@ export const detailTranslateId: Object = {
     delivery_opt: 'Pilihan pengiriman',
     customer_review: 'Penilaian pelanggan',
     buy_now: 'beli sekarang',
-    add_cart: 'tambah ke keranjang'
+    add_cart: 'tambah ke keranjang',
+    delivery_destination: "Tujuan Pengiriman",
+    select_destination: 'Pilih Tujuan',
 }

@@ -25,6 +25,7 @@ export const homeTranslateEn: Object = {
     search: 'Search',
     enter_your_email: 'Enter your email',
     subscribe: 'Subscribe',
+    show_all: 'Show All',
 }
 
 export const detailTranslateEn: Object = {
@@ -36,4 +37,6 @@ export const detailTranslateEn: Object = {
     customer_review: 'Customer review',
     buy_now: 'buy now',
     add_cart: 'add to cart',
+    delivery_destination: "Delivery Destination",
+    select_destination: 'Select Destination',
 }
