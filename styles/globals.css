@@ -44,3 +44,7 @@ body {
   background: rgb(212, 212, 212);
   border-radius: 10px;
 }
+
+#filter-checkbox {
+  accent-color: #000000;
+}

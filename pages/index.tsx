@@ -110,6 +110,7 @@ export default function Home(): JSX.Element {
             margin="mt-5"
             rounded="rounded-3xl"
             fontSize="text-sm"
+            link="explore"
           />
         </div>
         <div className="w-[90vw] max-w-screen-2xl mx-auto my-4">
