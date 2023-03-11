@@ -25,7 +25,7 @@ const Explore = (): JSX.Element => {
       </Head>
       <div className="w-[90vw] max-w-screen-2xl mx-auto mt-10">
         <div className="flex gap-x-3">
-          <div className="w-[20vw]">
+          <div className="w-[20vw] hidden md:block">
             <h4 className="bolded text-l font-bold">Filter</h4>
             <div className="mt-2">
               <h5 className="text-m">Category</h5>
@@ -155,13 +155,18 @@ const Explore = (): JSX.Element => {
               />
             </div>
           </div>
-          <div className="w-[80vw] flex flex-col">
-            <div className="mb-5 flex gap-x-3">
-              <Chip type='category' text="Gadget" />
-              <Chip type='rating' text="5" />
-              <Chip type='price' text="700 - 800" />
+          <div className="w-[100vw] md:w-[80vw] flex flex-col">
+            <div className="flex items-center justify-between mb-5">
+              <div className="flex flex-wrap gap-x-3">
+                <Chip type='category' text="Gadget" />
+                <Chip type='rating' text="5" />
+                <Chip type='price' text="700 - 800" />
+              </div>
+              <div className="block md:hidden">
+                <img className="w-[15px] h-[15px] cursor-pointer" src="images/filter.png" />
+              </div>
             </div>
-            <div className="flex justify-between grid grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="flex justify-between grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => (
                 <CardProduct
                   key={e}
@@ -170,7 +175,7 @@ const Explore = (): JSX.Element => {
                 />
               ))}
             </div>
-            <div className="mt-5 flex justify-end">
+            <div className="mt-8 flex justify-center md:justify-end">
               <Pagination />
             </div>
           </div>

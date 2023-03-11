@@ -42,6 +42,10 @@ const Header = ({ changeLanguage }: any): JSX.Element => {
     router.push("/");
   };
 
+  const redirectToCart = (): void => {
+    router.push("/cart");
+  };
+
   const dataLanguage: Array<{ title: string; action: Function }> = [
     { title: "English", action: () => changeLanguage("") },
     { title: "Indonesia", action: () => changeLanguage("id") },
@@ -110,7 +114,7 @@ const Header = ({ changeLanguage }: any): JSX.Element => {
             />
           </div>
         </div>
-        <div className="cursor-pointer">
+        <div className="cursor-pointer" onClick={redirectToCart}>
           <div className="absolute rounded-full w-4 h-4 -ml-1 -mt-[5px] bg-gray-200 mr-auto text-[8px] font-bold flex items-center justify-center shadow">
             0
           </div>

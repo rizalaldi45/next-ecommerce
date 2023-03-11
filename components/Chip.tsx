@@ -5,7 +5,7 @@ type ChipType = {
 
 const Chip = ({type, text}: ChipType): JSX.Element => {
     return (
-        <div className="border border-gray-200 drop-shadow-lg px-3 py-2 w-fit rounded-3xl flex items-center gap-x-3">
+        <div className="border border-gray-200 drop-shadow-lg px-3 py-2 w-fit rounded-3xl flex items-center gap-x-3 mb-1">
             <div className="text-[11px] font-semibold">
             {type} : <span className="font-normal">{text}</span>
             </div>

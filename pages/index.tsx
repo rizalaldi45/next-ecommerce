@@ -7,6 +7,7 @@ import Carousel from "react-multi-carousel";
 
 import CardProduct from "@/components/CardProduct";
 import Button from "@/components/Button";
+import Alert from "@/components/Alert";
 
 import "react-multi-carousel/lib/styles.css";
 
@@ -37,6 +38,7 @@ export default function Home(): JSX.Element {
   const { t } = useTranslation();
   const router = useRouter();
   const store = useSelector((state) => state);
+  const [showALert, setShowALert] = useState<boolean>(false);
   const [currentWidth, setCurrentWidth] = useState<number>(0);
   const [centerMode, setCendterMode] = useState<boolean>(true);
 
@@ -100,6 +102,12 @@ export default function Home(): JSX.Element {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main>
+        <Alert
+          open={showALert}
+          handleAlert={setShowALert}
+          type="error"
+          label="Success add to cart"
+        />
         <div className="w-[90vw] max-w-screen-2xl mx-auto mb-10 p-2 mt-3 text-center h-96 flex flex-col items-center justify-center bg-gray-100 rounded-2xl">
           <h1 className="font-bold text-2xl">{t("find_anything_goods")}</h1>
           <h3 className="text-md leading-10 text-gray-400">
@@ -175,7 +183,9 @@ export default function Home(): JSX.Element {
             <div className="mx-auto flex flex-col mt-10">
               <div className="flex justify-between">
                 <span className="text-[10px]">{t("discounted_product")}</span>
-                <a href="" className="text-[10px]">{t("show_all")}</a>
+                <a href="" className="text-[10px]">
+                  {t("show_all")}
+                </a>
               </div>
               <div className="flex mt-5 flex-wrap">
                 {productDiscount.map((e, i) => (
