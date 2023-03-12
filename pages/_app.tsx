@@ -29,7 +29,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <I18nextProvider i18n={I18n}>
         <Header changeLanguage={handleChangeLanguage} />
-        <Component {...pageProps} />
+        <div className='min-h-[50vh]'>
+          <Component {...pageProps} />
+        </div>
         <Footer />
       </I18nextProvider>
     </Provider>

@@ -33,44 +33,44 @@ const Explore = (): JSX.Element => {
                 <div>
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
-                  <label className="text-md ml-3" htmlFor="filter-checkbox">
+                  <label className="text-md ml-3" htmlFor="custom-checkbox">
                     Shoes
                   </label>
                 </div>
                 <div className="mt-2">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
-                  <label className="text-md ml-3" htmlFor="filter-checkbox">
+                  <label className="text-md ml-3" htmlFor="custom-checkbox">
                     Jacket
                   </label>
                 </div>
                 <div className="mt-2">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
-                  <label className="text-md ml-3" htmlFor="filter-checkbox">
+                  <label className="text-md ml-3" htmlFor="custom-checkbox">
                     T-shirt
                   </label>
                 </div>
                 <div className="mt-2">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
-                  <label className="text-md ml-3" htmlFor="filter-checkbox">
+                  <label className="text-md ml-3" htmlFor="custom-checkbox">
                     Gadget
                   </label>
                 </div>
@@ -82,8 +82,8 @@ const Explore = (): JSX.Element => {
                 <div className="flex items-center mt-3 gap-x-3">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
                   <Rating count={5} />
@@ -91,8 +91,8 @@ const Explore = (): JSX.Element => {
                 <div className="flex items-center mt-3 gap-x-3">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
                   <Rating count={4} />
@@ -100,8 +100,8 @@ const Explore = (): JSX.Element => {
                 <div className="flex items-center mt-3 gap-x-3">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
                   <Rating count={3} />
@@ -109,8 +109,8 @@ const Explore = (): JSX.Element => {
                 <div className="flex items-center mt-3 gap-x-3">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
                   <Rating count={2} />
@@ -118,8 +118,8 @@ const Explore = (): JSX.Element => {
                 <div className="flex items-center mt-3 gap-x-3">
                   <input
                     type="checkbox"
-                    id="filter-checkbox"
-                    name="filter-checkbox"
+                    id="custom-checkbox"
+                    name="custom-checkbox"
                     value="Bike"
                   />
                   <Rating count={1} />
